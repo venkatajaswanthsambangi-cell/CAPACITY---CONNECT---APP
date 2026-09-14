@@ -1,0 +1,6 @@
+{
+  "name": "Capacity Connect",
+  "description": "Enterprise capacity building & learning management system with role-based access, course management, competencies, and AI-assisted productivity.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

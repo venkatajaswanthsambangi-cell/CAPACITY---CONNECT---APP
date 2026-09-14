@@ -1,0 +1,164 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper Functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function getUserData() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+    
+    function getUserRole() {
+      return isAuthenticated() && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        ? getUserData().role
+        : null;
+    }
+    
+    function isSuperAdmin() {
+      return isAuthenticated() && (
+        getUserRole() == 'super_admin' || 
+        request.auth.token.email == 'venkatajaswanthsambangi@gmail.com' ||
+        (request.auth.token.email != null && request.auth.token.email == get(/databases/$(database)/documents/system_settings/general).data.superAdminEmail)
+      );
+    }
+    
+    function isAdmin() {
+      return isSuperAdmin() || getUserRole() == 'admin';
+    }
+    
+    function isTrainer() {
+      return isAdmin() || getUserRole() == 'trainer';
+    }
+    
+    function isLearner() {
+      return isAuthenticated();
+    }
+    
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // 1. Users Collection
+    match /users/{userId} {
+      // Any authenticated user can read profiles (needed for trainer listings & learner rosters)
+      allow read: if isAuthenticated();
+      // Users can create their own profile on signup; super_admin can create any
+      allow create: if isAuthenticated() && (
+        isOwner(userId) || isSuperAdmin()
+      );
+      // Users can update their own non-role fields; only Super Admin can modify 'role' or others
+      allow update: if isAuthenticated() && (
+        isSuperAdmin() || 
+        (isOwner(userId) && (!request.resource.data.diff(resource.data).affectedKeys().hasAny(['role', 'isSuperAdmin', 'permissions'])))
+      );
+      allow delete: if isSuperAdmin();
+    }
+
+    // 2. Roles & Permissions Matrix
+    match /roles/{roleId} {
+      allow read: if isAuthenticated();
+      allow write: if isSuperAdmin();
+    }
+
+    // 3. Courses Collection
+    match /courses/{courseId} {
+      allow read: if isAuthenticated();
+      allow create, update: if isTrainer();
+      allow delete: if isAdmin();
+      
+      match /modules/{moduleId} {
+        allow read: if isAuthenticated();
+        allow write: if isTrainer();
+      }
+    }
+
+    // 4. Trainings & Cohorts Collection
+    match /trainings/{trainingId} {
+      allow read: if isAuthenticated();
+      allow write: if isTrainer();
+    }
+
+    // 5. Learning Resources
+    match /resources/{resourceId} {
+      allow read: if isAuthenticated();
+      allow write: if isTrainer();
+    }
+
+    // 6. Assessments & Submissions
+    match /assessments/{assessmentId} {
+      allow read: if isAuthenticated();
+      allow write: if isTrainer();
+      
+      match /submissions/{submissionId} {
+        // Learner can create/read their own submission; Trainer/Admin can read and grade
+        allow read: if isAuthenticated() && (
+          isTrainer() || resource.data.userId == request.auth.uid
+        );
+        allow create: if isAuthenticated() && request.resource.data.userId == request.auth.uid;
+        allow update: if isAuthenticated() && (
+          isTrainer() || (resource.data.userId == request.auth.uid && resource.data.status == 'draft')
+        );
+        allow delete: if isAdmin();
+      }
+    }
+
+    // 7. Learner Progress & Enrollments
+    match /progress/{progressId} {
+      allow read: if isAuthenticated() && (
+        isTrainer() || resource.data.userId == request.auth.uid
+      );
+      allow create, update: if isAuthenticated() && (
+        isOwner(request.resource.data.userId) || isTrainer()
+      );
+      allow delete: if isAdmin();
+    }
+
+    // 8. Competencies Framework
+    match /competencies/{competencyId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+      
+      match /learner_evaluations/{evaluationId} {
+        allow read: if isAuthenticated() && (
+          isTrainer() || resource.data.userId == request.auth.uid
+        );
+        allow write: if isTrainer();
+      }
+    }
+
+    // 9. Notifications
+    match /notifications/{notificationId} {
+      allow read: if isAuthenticated() && (
+        resource.data.userId == request.auth.uid || resource.data.isGlobal == true
+      );
+      allow create: if isTrainer();
+      allow update: if isAuthenticated() && resource.data.userId == request.auth.uid;
+      allow delete: if isAuthenticated() && (
+        resource.data.userId == request.auth.uid || isAdmin()
+      );
+    }
+
+    // 10. Audit Logs (Append-only by system / Admin, Read by Super Admin & Admin)
+    match /audit_logs/{logId} {
+      allow read: if isAdmin();
+      allow create: if isAuthenticated(); // Server or authenticated client actions
+      allow update, delete: if false; // Immutable audit log
+    }
+
+    // 11. System Settings
+    match /system_settings/{settingId} {
+      allow read: if isAuthenticated();
+      allow write: if isSuperAdmin();
+    }
+
+    // 12. AI Conversations / Logs (Learner personal study sessions)
+    match /ai_sessions/{sessionId} {
+      allow read, write: if isAuthenticated() && (
+        resource == null || resource.data.userId == request.auth.uid
+      );
+    }
+  }
+}

@@ -1,0 +1,1285 @@
+{
+  "users": [
+    {
+      "id": "usr_superadmin",
+      "email": "venkatajaswanthsambangi@gmail.com",
+      "name": "Venkata Jaswanth Sambangi",
+      "role": "super_admin",
+      "department": "Enterprise Strategy & Governance",
+      "title": "Chief Capacity Architect & Super Admin",
+      "bio": "Configured Super Administrator with absolute access control and system governance.",
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200",
+      "createdAt": "2026-08-15T06:04:37.014Z",
+      "updatedAt": "2026-09-14T06:04:37.014Z",
+      "isActive": true
+    },
+    {
+      "id": "usr_admin",
+      "email": "admin@capacityconnect.org",
+      "name": "Elena Rostova",
+      "role": "admin",
+      "department": "Capacity Operations",
+      "title": "Director of Learning Programs",
+      "bio": "Oversees enterprise curriculum, trainer allocations, and organizational KPI tracking.",
+      "avatarUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=200",
+      "createdAt": "2026-08-20T06:04:37.014Z",
+      "updatedAt": "2026-09-14T06:04:37.014Z",
+      "isActive": true
+    },
+    {
+      "id": "usr_trainer",
+      "email": "trainer@capacityconnect.org",
+      "name": "Dr. Marcus Vance",
+      "role": "trainer",
+      "department": "Cloud & AI Academy",
+      "title": "Principal Technical Trainer",
+      "bio": "Specialist in distributed cloud architectures, generative AI systems, and microservices.",
+      "avatarUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200",
+      "createdAt": "2026-08-25T06:04:37.014Z",
+      "updatedAt": "2026-09-14T06:04:37.014Z",
+      "isActive": true
+    },
+    {
+      "id": "usr_learner",
+      "email": "learner@capacityconnect.org",
+      "name": "Aria Chen",
+      "role": "learner",
+      "department": "Digital Transformation Cohort",
+      "title": "Senior Systems Analyst",
+      "bio": "Upskilling in enterprise architecture, DevOps resilience, and AI integration pipelines.",
+      "avatarUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200",
+      "createdAt": "2026-08-30T06:04:37.014Z",
+      "updatedAt": "2026-09-14T06:04:37.014Z",
+      "isActive": true
+    },
+    {
+      "id": "usr_1789368604707",
+      "email": "sarah.connor@enterprise.org",
+      "name": "Sarah Connor",
+      "role": "learner",
+      "department": "Cyber Defense",
+      "title": "Security Lead",
+      "createdAt": "2026-09-14T06:50:04.707Z",
+      "updatedAt": "2026-09-14T06:50:04.707Z",
+      "isActive": true
+    }
+  ],
+  "roles": [
+    {
+      "role": "super_admin",
+      "displayName": "Super Admin",
+      "description": "Complete application administration privileges, configuration, and security control.",
+      "permissions": [
+        "users.manage",
+        "users.roles.assign",
+        "settings.manage",
+        "audit.view",
+        "reports.view",
+        "courses.manage",
+        "trainings.manage",
+        "resources.manage",
+        "assessments.manage",
+        "competencies.manage",
+        "notifications.broadcast",
+        "ai.access"
+      ]
+    },
+    {
+      "role": "admin",
+      "displayName": "Admin",
+      "description": "Operational management across courses, cohorts, trainers, and institutional reporting.",
+      "permissions": [
+        "users.read",
+        "reports.view",
+        "courses.manage",
+        "trainings.manage",
+        "resources.manage",
+        "assessments.manage",
+        "competencies.manage",
+        "notifications.send",
+        "ai.access"
+      ]
+    },
+    {
+      "role": "trainer",
+      "displayName": "Trainer",
+      "description": "Delivers courses, manages cohorts, reviews submissions, validates competencies.",
+      "permissions": [
+        "courses.read",
+        "courses.edit_assigned",
+        "trainings.conduct",
+        "assessments.grade",
+        "competencies.validate",
+        "resources.create",
+        "notifications.cohort",
+        "ai.access"
+      ]
+    },
+    {
+      "role": "learner",
+      "displayName": "Learner",
+      "description": "Accesses learning pathways, submits assessments, tracks progress and competencies.",
+      "permissions": [
+        "courses.enroll",
+        "courses.learn",
+        "assessments.submit",
+        "progress.view_own",
+        "resources.view",
+        "ai.learning_assistant"
+      ]
+    }
+  ],
+  "courses": [
+    {
+      "id": "crs_1789368600571",
+      "title": "Cloud Security Test",
+      "code": "SEC999",
+      "description": "",
+      "category": "Security",
+      "level": "Advanced",
+      "durationHours": 15,
+      "instructorId": "usr_trainer",
+      "instructorName": "Dr. Marcus Vance",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=600",
+      "modules": [],
+      "competencyIds": [],
+      "isPublished": true,
+      "enrolledCount": 0,
+      "rating": 5,
+      "createdAt": "2026-09-14T06:50:00.571Z",
+      "updatedAt": "2026-09-14T06:50:00.571Z"
+    },
+    {
+      "id": "crs_cloud_arch",
+      "title": "Enterprise Cloud Architecture & Distributed Systems",
+      "code": "CAP-ARC-401",
+      "description": "Master large-scale enterprise cloud patterns, reliability engineering, failover strategies, and microservice orchestration.",
+      "category": "Cloud Engineering",
+      "level": "Advanced",
+      "durationHours": 36,
+      "instructorId": "usr_trainer",
+      "instructorName": "Dr. Marcus Vance",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=600",
+      "competencyIds": [
+        "comp_cloud",
+        "comp_security"
+      ],
+      "isPublished": true,
+      "enrolledCount": 48,
+      "rating": 4.9,
+      "createdAt": "2026-08-25T06:04:37.014Z",
+      "updatedAt": "2026-09-14T06:04:37.014Z",
+      "modules": [
+        {
+          "id": "mod_1",
+          "title": "Core Architecture Pillars & High Availability",
+          "description": "Multi-region failover, load balancing algorithms, and resilience engineering.",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "les_101",
+              "title": "Foundations of Modern Distributed Topologies",
+              "description": "Deconstructing monoliths into bounded context microservices.",
+              "durationMinutes": 45,
+              "content": "In distributed systems design, data boundaries determine scalability bottlenecks. We explore CAP theorem trade-offs, consensus algorithms (Raft, Paxos), and zero-trust perimeter segmentation.",
+              "order": 1
+            },
+            {
+              "id": "les_102",
+              "title": "Resilience Patterns: Circuit Breakers & Retries",
+              "description": "Implementing fault tolerance using token bucket and exponential backoff.",
+              "durationMinutes": 60,
+              "content": "Prevent cascading failures across upstream dependencies using circuit breakers and bulkhead isolations.",
+              "order": 2
+            }
+          ]
+        },
+        {
+          "id": "mod_2",
+          "title": "Enterprise Event-Driven Architecture",
+          "description": "Kafka, event sourcing, CQRS patterns, and asynchronous messaging pipelines.",
+          "order": 2,
+          "lessons": [
+            {
+              "id": "les_201",
+              "title": "Kafka Stream Processing & Schema Registry",
+              "description": "Topic partitioning, consumer groups, and Avro serialization.",
+              "durationMinutes": 50,
+              "content": "Event-driven backbone architecture handles million-scale mutations with sub-millisecond dispatch.",
+              "order": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crs_ai_eng",
+      "title": "Enterprise AI Strategy, LLMOps & Gemini Integration",
+      "code": "CAP-AI-502",
+      "description": "Design and deploy production-grade generative AI workflows, guardrails, retrieval-augmented generation (RAG), and evaluation pipelines.",
+      "category": "Artificial Intelligence",
+      "level": "Advanced",
+      "durationHours": 42,
+      "instructorId": "usr_trainer",
+      "instructorName": "Dr. Marcus Vance",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=600",
+      "competencyIds": [
+        "comp_ai",
+        "comp_governance"
+      ],
+      "isPublished": true,
+      "enrolledCount": 64,
+      "rating": 4.95,
+      "createdAt": "2026-08-27T06:04:37.014Z",
+      "updatedAt": "2026-09-14T06:04:37.014Z",
+      "modules": [
+        {
+          "id": "mod_ai_1",
+          "title": "Secure LLM Integration & Enterprise Guardrails",
+          "description": "Sanitizing prompts, context isolation, PII masking, and output verification.",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "les_ai_101",
+              "title": "Architecture of Secure AI Middlewares",
+              "description": "Preventing prompt injection and unauthorized administrative escalation.",
+              "durationMinutes": 55,
+              "content": "LLMs in enterprise software must never receive direct database execution tokens or system management credentials. All operations require deterministic mediation layers.",
+              "order": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crs_cyber_gov",
+      "title": "Enterprise Cybersecurity Governance & Zero-Trust Access",
+      "code": "CAP-SEC-303",
+      "description": "Institutional security compliance, cryptographic attestation, role-based access control (RBAC), and continuous audit logging.",
+      "category": "Security & Compliance",
+      "level": "Intermediate",
+      "durationHours": 30,
+      "instructorId": "usr_trainer",
+      "instructorName": "Dr. Marcus Vance",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=600",
+      "competencyIds": [
+        "comp_security",
+        "comp_governance"
+      ],
+      "isPublished": true,
+      "enrolledCount": 52,
+      "rating": 4.85,
+      "createdAt": "2026-08-31T06:04:37.014Z",
+      "updatedAt": "2026-09-14T06:04:37.014Z",
+      "modules": [
+        {
+          "id": "mod_sec_1",
+          "title": "Role-Based Authorization & Immutable Auditing",
+          "description": "Enforcing least-privilege policies across distributed multi-tenant systems.",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "les_sec_101",
+              "title": "RBAC vs ABAC & Token Introspection",
+              "description": "Claims validation, cryptographically signed tokens, and session revocations.",
+              "durationMinutes": 40,
+              "content": "Role matrices require strict boundaries between administrative, instructional, and learner personas.",
+              "order": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "trainings": [
+    {
+      "id": "tr_q3_cohort_alpha",
+      "title": "Cloud Leadership Cohort Alpha - Fall 2026",
+      "courseId": "crs_cloud_arch",
+      "courseTitle": "Enterprise Cloud Architecture & Distributed Systems",
+      "trainerId": "usr_trainer",
+      "trainerName": "Dr. Marcus Vance",
+      "startDate": "2026-09-01",
+      "endDate": "2026-10-30",
+      "meetingSchedule": "Tuesdays & Thursdays, 16:00 - 18:00 UTC",
+      "location": "Virtual Live Labs & Sydney Innovation Hub",
+      "capacity": 30,
+      "enrolledLearnerIds": [
+        "usr_learner"
+      ],
+      "status": "Active",
+      "createdAt": "2026-08-31T06:04:37.014Z"
+    },
+    {
+      "id": "tr_q3_ai_bootcamp",
+      "title": "Generative AI & LLMOps Accelerator",
+      "courseId": "crs_ai_eng",
+      "courseTitle": "Enterprise AI Strategy, LLMOps & Gemini Integration",
+      "trainerId": "usr_trainer",
+      "trainerName": "Dr. Marcus Vance",
+      "startDate": "2026-09-15",
+      "endDate": "2026-11-15",
+      "meetingSchedule": "Mondays & Wednesdays, 14:00 - 16:30 UTC",
+      "location": "Virtual Immersive Studio",
+      "capacity": 25,
+      "enrolledLearnerIds": [
+        "usr_learner"
+      ],
+      "status": "Active",
+      "createdAt": "2026-09-04T06:04:37.014Z"
+    }
+  ],
+  "resources": [
+    {
+      "id": "res_01",
+      "title": "Enterprise Cloud Topology Blueprint 2026",
+      "category": "Documentation",
+      "description": "Full architectural diagram covering multi-region high availability, API gateways, and microservice meshes.",
+      "url": "https://cloud.google.com/architecture",
+      "fileSize": "4.8 MB PDF",
+      "tags": [
+        "Cloud",
+        "Architecture",
+        "Reliability"
+      ],
+      "authorName": "Dr. Marcus Vance",
+      "downloadCount": 238,
+      "createdAt": "2026-08-23T06:04:37.014Z"
+    },
+    {
+      "id": "res_02",
+      "title": "Secure LLM Orchestration & Prompt Guardrails Whitepaper",
+      "category": "Research",
+      "description": "Comprehensive guidelines on isolating LLM queries from internal databases and preventing privilege escalation.",
+      "url": "https://ai.google.dev/docs",
+      "fileSize": "3.2 MB PDF",
+      "tags": [
+        "AI",
+        "Security",
+        "LLMOps",
+        "Governance"
+      ],
+      "authorName": "Dr. Marcus Vance",
+      "downloadCount": 412,
+      "createdAt": "2026-08-26T06:04:37.014Z"
+    },
+    {
+      "id": "res_03",
+      "title": "Zero-Trust Role-Based Access Control (RBAC) Matrix Template",
+      "category": "Template",
+      "description": "Standardized operational matrix for separating Super Admin, Admin, Trainer, and Learner permissions.",
+      "url": "https://csrc.nist.gov/publications/detail/sp/800-162/final",
+      "fileSize": "1.1 MB XLSX",
+      "tags": [
+        "Security",
+        "RBAC",
+        "Compliance"
+      ],
+      "authorName": "Elena Rostova",
+      "downloadCount": 189,
+      "createdAt": "2026-09-02T06:04:37.014Z"
+    }
+  ],
+  "assessments": [
+    {
+      "id": "asm_cloud_midterm",
+      "title": "Cloud Resilience & Failover Simulation Assessment",
+      "courseId": "crs_cloud_arch",
+      "courseTitle": "Enterprise Cloud Architecture & Distributed Systems",
+      "description": "Evaluate practical architectural resilience against region outage scenarios and latency spikes.",
+      "type": "Practical_Assignment",
+      "durationMinutes": 90,
+      "totalPoints": 100,
+      "passPercentage": 75,
+      "dueDate": "2026-09-30T23:59:59Z",
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which resilience mechanism prevents an overwhelmed downstream service from causing total system collapse?",
+          "type": "multiple_choice",
+          "options": [
+            "Aggressive retry loops without backoff",
+            "Circuit Breaker pattern with exponential backoff and jitter",
+            "Synchronous blocking socket timeouts",
+            "Disabling API health checks"
+          ],
+          "correctOptionIndex": 1,
+          "points": 25
+        },
+        {
+          "id": "q2",
+          "prompt": "In a CAP theorem trade-off during network partitioning, what design choice guarantees immediate consistent state across replica sets?",
+          "type": "multiple_choice",
+          "options": [
+            "High Availability (AP) with eventual consistency",
+            "Strict Consistency (CP) with quorum acknowledgement",
+            "Unicast UDP streaming",
+            "Ignoring split-brain scenarios"
+          ],
+          "correctOptionIndex": 1,
+          "points": 25
+        },
+        {
+          "id": "q3",
+          "prompt": "Outline your architectural plan for handling a 10x traffic spike on checkout microservices during peak enterprise enrollment.",
+          "type": "open_ended",
+          "rubricCriteria": "Evaluates autoscale configuration, asynchronous message queuing, database read replicas, and caching strategies.",
+          "points": 50
+        }
+      ],
+      "createdAt": "2026-08-30T06:04:37.014Z"
+    },
+    {
+      "id": "asm_ai_security",
+      "title": "AI Guardrails & Safe Integration Quiz",
+      "courseId": "crs_ai_eng",
+      "courseTitle": "Enterprise AI Strategy, LLMOps & Gemini Integration",
+      "description": "Knowledge assessment covering model sandboxing, context isolation, and preventing unintended database execution.",
+      "type": "Quiz",
+      "durationMinutes": 45,
+      "totalPoints": 50,
+      "passPercentage": 80,
+      "dueDate": "2026-10-15T23:59:59Z",
+      "questions": [
+        {
+          "id": "q_ai_1",
+          "prompt": "Why must an AI assistant NEVER be given administrative database credentials or raw SQL/mutation capabilities?",
+          "type": "multiple_choice",
+          "options": [
+            "It makes token consumption slightly higher",
+            "Prompt injection could trick the model into executing unauthorized data deletions or role escalations",
+            "AI models cannot process structured data",
+            "There is no reason; AI models should have full root access"
+          ],
+          "correctOptionIndex": 1,
+          "points": 25
+        },
+        {
+          "id": "q_ai_2",
+          "prompt": "What layer should sit between an LLM and corporate application backends?",
+          "type": "multiple_choice",
+          "options": [
+            "A deterministic, permission-validated API middleware that rejects unauthenticated actions",
+            "Direct open socket connections to the database master node",
+            "None, prompt engineering alone is 100% secure",
+            "Unencrypted raw text proxies"
+          ],
+          "correctOptionIndex": 0,
+          "points": 25
+        }
+      ],
+      "createdAt": "2026-09-04T06:04:37.014Z"
+    }
+  ],
+  "submissions": [
+    {
+      "id": "sub_usr_learner_asm_1789367294621",
+      "assessmentId": "asm_1789367294621",
+      "assessmentTitle": "Cloud Security Audit Midterm",
+      "userId": "usr_learner",
+      "userName": "Aria Chen",
+      "answers": {
+        "q1": 1
+      },
+      "submittedAt": "2026-09-14T06:28:18.673Z",
+      "status": "graded",
+      "score": 98,
+      "totalPoints": 100,
+      "feedback": "Superb mastery of security principles!",
+      "gradedBy": "Dr. Marcus Vance",
+      "gradedAt": "2026-09-14T06:28:26.685Z"
+    },
+    {
+      "id": "sub_aria_01",
+      "assessmentId": "asm_cloud_midterm",
+      "assessmentTitle": "Cloud Resilience & Failover Simulation Assessment",
+      "userId": "usr_learner",
+      "userName": "Aria Chen",
+      "answers": {
+        "q1": 1,
+        "q2": 1,
+        "q3": "I implement a decoupled architecture using Kafka queues for transaction buffering, Redis cluster for session cache, and Cloud Run autoscaling from 10 to 120 container instances with p99 latency alerts at 250ms."
+      },
+      "submittedAt": "2026-09-11T06:04:37.014Z",
+      "status": "graded",
+      "score": 95,
+      "totalPoints": 100,
+      "feedback": "Outstanding architectural clarity, precise understanding of backpressure buffering and autoscale triggers.",
+      "gradedBy": "usr_trainer",
+      "gradedAt": "2026-09-12T06:04:37.014Z"
+    }
+  ],
+  "progress": [
+    {
+      "id": "prog_aria_cloud",
+      "userId": "usr_learner",
+      "courseId": "crs_cloud_arch",
+      "enrolledAt": "2026-08-31T06:04:37.014Z",
+      "completedLessonIds": [
+        "les_101",
+        "les_102"
+      ],
+      "progressPercentage": 66,
+      "lastAccessedAt": "2026-09-14T06:04:37.014Z",
+      "isCompleted": false
+    },
+    {
+      "id": "prog_aria_ai",
+      "userId": "usr_learner",
+      "courseId": "crs_ai_eng",
+      "enrolledAt": "2026-09-04T06:04:37.014Z",
+      "completedLessonIds": [
+        "les_ai_101"
+      ],
+      "progressPercentage": 50,
+      "lastAccessedAt": "2026-09-14T06:04:37.014Z",
+      "isCompleted": false
+    },
+    {
+      "id": "prog_usr_learner_crs_enterprise_arch_101",
+      "userId": "usr_learner",
+      "courseId": "crs_enterprise_arch_101",
+      "enrolledAt": "2026-09-14T06:51:52.065Z",
+      "completedLessonIds": [],
+      "progressPercentage": 0,
+      "lastAccessedAt": "2026-09-14T06:51:57.891Z",
+      "isCompleted": false
+    }
+  ],
+  "competencies": [
+    {
+      "id": "comp_cloud",
+      "code": "COMP-ARC-01",
+      "name": "Distributed Cloud Systems & Resiliency",
+      "category": "Technical Architecture",
+      "description": "Ability to architect, deploy, and maintain fault-tolerant, scalable distributed systems across multi-region environments.",
+      "levels": [
+        {
+          "level": 1,
+          "name": "Foundational",
+          "description": "Understands basic virtualization, container concepts, and single-region deployments.",
+          "criteria": [
+            "Deploys containers",
+            "Configures basic VPC"
+          ]
+        },
+        {
+          "level": 2,
+          "name": "Practitioner",
+          "description": "Configures load balancers, managed databases, and multi-tier network security groups.",
+          "criteria": [
+            "Sets up SSL/TLS termination",
+            "Configures auto-scaling groups"
+          ]
+        },
+        {
+          "level": 3,
+          "name": "Proficient",
+          "description": "Designs zero-downtime blue/green deployments and distributed caching tiers.",
+          "criteria": [
+            "Executes chaos experiments",
+            "Tunes Redis/Memcached hit ratios"
+          ]
+        },
+        {
+          "level": 4,
+          "name": "Advanced",
+          "description": "Architects multi-region active-active topologies with automated geo-DNS failover.",
+          "criteria": [
+            "Designs cross-region DB sync",
+            "Formulates disaster recovery RTO/RPO"
+          ]
+        },
+        {
+          "level": 5,
+          "name": "Master",
+          "description": "Sets global enterprise engineering standards and mentors principal architects.",
+          "criteria": [
+            "Authors organizational architecture principles",
+            "Advises C-level technology roadmap"
+          ]
+        }
+      ],
+      "relatedCourseIds": [
+        "crs_cloud_arch"
+      ],
+      "createdAt": "2026-08-15T06:04:37.014Z"
+    },
+    {
+      "id": "comp_ai",
+      "code": "COMP-AI-02",
+      "name": "Enterprise Generative AI & LLMOps",
+      "category": "Applied AI",
+      "description": "Capability to securely integrate foundation models, build robust guardrails, and evaluate production inference pipelines.",
+      "levels": [
+        {
+          "level": 1,
+          "name": "Awareness",
+          "description": "Familiarity with prompt engineering fundamentals and token limits.",
+          "criteria": [
+            "Constructs zero-shot & few-shot prompts"
+          ]
+        },
+        {
+          "level": 2,
+          "name": "Integrator",
+          "description": "Integrates model APIs with server-side SDKs and handles streaming tokens.",
+          "criteria": [
+            "Calls Gemini REST/SDK",
+            "Handles rate-limits gracefully"
+          ]
+        },
+        {
+          "level": 3,
+          "name": "Specialist",
+          "description": "Designs Retrieval-Augmented Generation (RAG) pipelines with vector embeddings.",
+          "criteria": [
+            "Implements semantic vector search",
+            "Constructs chunking strategies"
+          ]
+        },
+        {
+          "level": 4,
+          "name": "Architect",
+          "description": "Implements enterprise guardrails, prompt injection defenses, and latency optimizations.",
+          "criteria": [
+            "Enforces output validation schemas",
+            "Integrates model telemetry"
+          ]
+        },
+        {
+          "level": 5,
+          "name": "Authority",
+          "description": "Leads organizational AI ethics, governance boards, and proprietary fine-tuning programs.",
+          "criteria": [
+            "Audits model safety and bias",
+            "Defines enterprise AI policy"
+          ]
+        }
+      ],
+      "relatedCourseIds": [
+        "crs_ai_eng"
+      ],
+      "createdAt": "2026-08-15T06:04:37.014Z"
+    },
+    {
+      "id": "comp_security",
+      "code": "COMP-SEC-03",
+      "name": "Identity Governance & Zero-Trust RBAC",
+      "category": "Security & Governance",
+      "description": "Designing role-based access control, cryptographic verification, and tamper-evident audit logging systems.",
+      "levels": [
+        {
+          "level": 1,
+          "name": "Basic",
+          "description": "Understands authentication vs authorization principles.",
+          "criteria": [
+            "Manages passwords & MFA"
+          ]
+        },
+        {
+          "level": 2,
+          "name": "Applied",
+          "description": "Applies token claims and role guards in web/API routes.",
+          "criteria": [
+            "Configures JWT validation"
+          ]
+        },
+        {
+          "level": 3,
+          "name": "Advanced",
+          "description": "Constructs dynamic policy engines (RBAC + ABAC) and granular permissions.",
+          "criteria": [
+            "Writes Firestore Security Rules",
+            "Implements scoped session tokens"
+          ]
+        },
+        {
+          "level": 4,
+          "name": "Expert",
+          "description": "Conducts threat modeling, pen testing, and privilege escalation mitigation.",
+          "criteria": [
+            "Audits authentication pipelines",
+            "Enforces least-privilege automation"
+          ]
+        },
+        {
+          "level": 5,
+          "name": "Fellow",
+          "description": "Directs global compliance frameworks (SOC2, ISO27001, FedRAMP).",
+          "criteria": [
+            "Leads institutional compliance certifications"
+          ]
+        }
+      ],
+      "relatedCourseIds": [
+        "crs_cyber_gov",
+        "crs_cloud_arch"
+      ],
+      "createdAt": "2026-08-15T06:04:37.014Z"
+    }
+  ],
+  "learner_competencies": [
+    {
+      "userId": "usr_learner",
+      "competencyId": "comp_cloud",
+      "competencyName": "Distributed Cloud Systems & Resiliency",
+      "currentLevel": 3,
+      "verifiedBy": "usr_trainer",
+      "verifiedAt": "2026-09-09T06:04:37.014Z"
+    },
+    {
+      "userId": "usr_learner",
+      "competencyId": "comp_ai",
+      "competencyName": "Enterprise Generative AI & LLMOps",
+      "currentLevel": 2,
+      "verifiedBy": "usr_trainer",
+      "verifiedAt": "2026-09-12T06:04:37.014Z"
+    },
+    {
+      "userId": "usr_learner_1",
+      "competencyId": "comp_1789368701419",
+      "competencyName": "Architecture Security",
+      "currentLevel": 3,
+      "verifiedBy": "Venkata Jaswanth Sambangi",
+      "verifiedAt": "2026-09-14T06:51:41.424Z"
+    }
+  ],
+  "notifications": [
+    {
+      "userId": "usr_learner",
+      "title": "Assessment Graded",
+      "message": "Dr. Marcus Vance graded your submission for \"Cloud Security Audit Midterm\": Score 98/100",
+      "type": "assessment",
+      "isRead": false,
+      "isGlobal": false,
+      "link": "/assessments",
+      "id": "notif_1789367306685_ya69",
+      "createdAt": "2026-09-14T06:28:26.685Z"
+    },
+    {
+      "userId": "usr_learner",
+      "title": "Assessment Auto-Graded",
+      "message": "Your quiz \"Cloud Security Audit Midterm\" scored 100 / 100 points.",
+      "type": "assessment",
+      "isRead": false,
+      "isGlobal": false,
+      "link": "/assessments",
+      "id": "notif_1789367298674_gtrc",
+      "createdAt": "2026-09-14T06:28:18.674Z"
+    },
+    {
+      "id": "notif_welcome",
+      "title": "CAPACITY CONNECT Core Initialized",
+      "message": "Welcome to CAPACITY CONNECT! Super Admin privileges have been established for venkatajaswanthsambangi@gmail.com.",
+      "type": "system",
+      "isRead": false,
+      "isGlobal": true,
+      "createdAt": "2026-09-14T06:04:37.014Z"
+    },
+    {
+      "id": "notif_asm_graded",
+      "userId": "usr_learner",
+      "title": "Assessment Graded",
+      "message": "Dr. Marcus Vance graded your \"Cloud Resilience & Failover Simulation\" submission with a score of 95/100.",
+      "type": "assessment",
+      "isRead": false,
+      "isGlobal": false,
+      "link": "/assessments",
+      "createdAt": "2026-09-12T06:04:37.014Z"
+    },
+    {
+      "id": "notif_cohort_alert",
+      "title": "New Fall 2026 Cohorts Open for Enrollment",
+      "message": "Registrations are now active for Enterprise Cloud Architecture and Generative AI Accelerator cohorts.",
+      "type": "info",
+      "isRead": false,
+      "isGlobal": true,
+      "link": "/trainings",
+      "createdAt": "2026-09-13T06:04:37.015Z"
+    }
+  ],
+  "audit_logs": [
+    {
+      "actorId": "usr_learner",
+      "actorEmail": "learner@capacityconnect.org",
+      "actorRole": "learner",
+      "action": "AI_ASSISTANT_QUERY",
+      "module": "AI Assistant",
+      "details": "Query length: 31 chars. Context: General. User: learner@capacityconnect.org",
+      "status": "SUCCESS",
+      "id": "aud_1789368701913_8kipr",
+      "timestamp": "2026-09-14T06:51:41.913Z"
+    },
+    {
+      "actorId": "usr_superadmin",
+      "actorEmail": "venkatajaswanthsambangi@gmail.com",
+      "actorRole": "super_admin",
+      "action": "DELETE_COMPETENCY",
+      "module": "Competencies",
+      "details": "Deleted competency: \"Architecture Security\" (ARCH-SEC)",
+      "status": "SUCCESS",
+      "id": "aud_1789368701429_ai0ey",
+      "timestamp": "2026-09-14T06:51:41.429Z"
+    },
+    {
+      "actorId": "usr_superadmin",
+      "actorEmail": "venkatajaswanthsambangi@gmail.com",
+      "actorRole": "super_admin",
+      "action": "CREATE_COMPETENCY",
+      "module": "Competencies",
+      "details": "Added competency: \"Architecture Security\" (ARCH-SEC)",
+      "status": "SUCCESS",
+      "id": "aud_1789368701419_jjqzn",
+      "timestamp": "2026-09-14T06:51:41.419Z"
+    },
+    {
+      "actorId": "usr_superadmin",
+      "actorEmail": "venkatajaswanthsambangi@gmail.com",
+      "actorRole": "super_admin",
+      "action": "DELETE_COURSE",
+      "module": "Course Management",
+      "details": "Deleted course: \"Updated Integration Test Course\"",
+      "status": "SUCCESS",
+      "id": "aud_1789368701414_rd48r",
+      "timestamp": "2026-09-14T06:51:41.414Z"
+    },
+    {
+      "actorId": "usr_superadmin",
+      "actorEmail": "venkatajaswanthsambangi@gmail.com",
+      "actorRole": "super_admin",
+      "action": "UPDATE_COURSE",
+      "module": "Course Management",
+      "details": "Updated course: \"Updated Integration Test Course\"",
+      "status": "SUCCESS",
+      "id": "aud_1789368701401_jdv4v",
+      "timestamp": "2026-09-14T06:51:41.401Z"
+    },
+    {
+      "actorId": "usr_superadmin",
+      "actorEmail": "venkatajaswanthsambangi@gmail.com",
+      "actorRole": "super_admin",
+      "action": "CREATE_COURSE",
+      "module": "Course Management",
+      "details": "Created new course: \"Integration Test Course\" (ITC-101)",
+      "status": "SUCCESS",
+      "id": "aud_1789368701386_pqy3v",
+      "timestamp": "2026-09-14T06:51:41.386Z"
+    },
+    {
+      "actorId": "usr_1789368604707",
+      "actorEmail": "sarah.connor@enterprise.org",
+      "actorRole": "learner",
+      "action": "USER_REGISTER",
+      "module": "Authentication",
+      "details": "User Sarah Connor (sarah.connor@enterprise.org) registered with role learner",
+      "status": "SUCCESS",
+      "id": "aud_1789368604707_jiq6e",
+      "timestamp": "2026-09-14T06:50:04.707Z"
+    },
+    {
+      "actorId": "usr_superadmin",
+      "actorEmail": "venkatajaswanthsambangi@gmail.com",
+      "actorRole": "super_admin",
+      "action": "UPDATE_SYSTEM_SETTINGS",
+      "module": "System Settings",
+      "details": "Updated settings: maintenanceMode",
+      "status": "SUCCESS",
+      "id": "aud_1789368600624_ts499",
+      "timestamp": "2026-09-14T06:50:00.624Z"
+    },
+    {
+      "actorId": "usr_trainer",
+      "actorEmail": "trainer@capacityconnect.org",
+      "actorRole": "trainer",
+      "action": "CREATE_COURSE",
+      "module": "Course Management",
+      "details": "Created new course: \"Cloud Security Test\" (SEC999)",
+      "status": "SUCCESS",
+      "id": "aud_1789368600571_d70fe",
+      "timestamp": "2026-09-14T06:50:00.571Z"
+    },
+    {
+      "actorId": "usr_superadmin",
+      "actorEmail": "venkatajaswanthsambangi@gmail.com",
+      "actorRole": "super_admin",
+      "action": "UPDATE_SYSTEM_SETTINGS",
+      "module": "System Settings",
+      "details": "Updated settings: superAdminEmail, organizationName, defaultUserRole, allowSelfRegistration, aiModel, auditRetentionDays, enforceRbacStrict, supportContactEmail, maintenanceMode, aiAssistantEnabled",
+      "status": "SUCCESS",
+      "id": "aud_1789368594311_69h50",
+      "timestamp": "2026-09-14T06:49:54.311Z"
+    },
+    {
+      "actorId": "usr_superadmin",
+      "actorEmail": "venkatajaswanthsambangi@gmail.com",
+      "actorRole": "super_admin",
+      "action": "UPDATE_SYSTEM_SETTINGS",
+      "module": "System Settings",
+      "details": "Updated settings: organizationName",
+      "status": "SUCCESS",
+      "id": "aud_1789368583722_t5drm",
+      "timestamp": "2026-09-14T06:49:43.722Z"
+    },
+    {
+      "actorId": "usr_superadmin",
+      "actorEmail": "venkatajaswanthsambangi@gmail.com",
+      "actorRole": "super_admin",
+      "action": "UPDATE_SYSTEM_SETTINGS",
+      "module": "System Settings",
+      "details": "Updated settings: superAdminEmail, organizationName, defaultUserRole, allowSelfRegistration, aiModel, auditRetentionDays, enforceRbacStrict, supportContactEmail, maintenanceMode, aiAssistantEnabled",
+      "status": "SUCCESS",
+      "id": "aud_1789368464697_lqspy",
+      "timestamp": "2026-09-14T06:47:44.697Z"
+    },
+    {
+      "actorId": "usr_superadmin",
+      "actorEmail": "venkatajaswanthsambangi@gmail.com",
+      "actorRole": "super_admin",
+      "action": "UPDATE_SYSTEM_SETTINGS",
+      "module": "System Settings",
+      "details": "Updated settings: organizationName",
+      "status": "SUCCESS",
+      "id": "aud_1789368451390_t1xd2",
+      "timestamp": "2026-09-14T06:47:31.390Z"
+    },
+    {
+      "actorId": "usr_superadmin",
+      "actorEmail": "venkatajaswanthsambangi@gmail.com",
+      "actorRole": "super_admin",
+      "action": "AI_ASSISTANT_QUERY",
+      "module": "AI Assistant",
+      "details": "Query length: 23 chars. Context: General. User: venkatajaswanthsambangi@gmail.com",
+      "status": "SUCCESS",
+      "id": "aud_1789367814829_v73rd",
+      "timestamp": "2026-09-14T06:36:54.829Z"
+    },
+    {
+      "actorId": "usr_superadmin",
+      "actorEmail": "venkatajaswanthsambangi@gmail.com",
+      "actorRole": "super_admin",
+      "action": "AI_ASSISTANT_QUERY",
+      "module": "AI Assistant",
+      "details": "Query length: 23 chars. Context: General. User: venkatajaswanthsambangi@gmail.com",
+      "status": "SUCCESS",
+      "id": "aud_1789367790731_g6mad",
+      "timestamp": "2026-09-14T06:36:30.731Z"
+    },
+    {
+      "actorId": "usr_superadmin",
+      "actorEmail": "venkatajaswanthsambangi@gmail.com",
+      "actorRole": "super_admin",
+      "action": "AI_ASSISTANT_QUERY",
+      "module": "AI Assistant",
+      "details": "Query length: 68 chars. Context: General. User: venkatajaswanthsambangi@gmail.com",
+      "status": "SUCCESS",
+      "id": "aud_1789367775052_sij3e",
+      "timestamp": "2026-09-14T06:36:15.052Z"
+    },
+    {
+      "actorId": "usr_superadmin",
+      "actorEmail": "venkatajaswanthsambangi@gmail.com",
+      "actorRole": "super_admin",
+      "action": "AI_ASSISTANT_QUERY",
+      "module": "AI Assistant",
+      "details": "Query length: 36 chars. Context: General. User: venkatajaswanthsambangi@gmail.com",
+      "status": "SUCCESS",
+      "id": "aud_1789367717993_6mkap",
+      "timestamp": "2026-09-14T06:35:17.993Z"
+    },
+    {
+      "actorId": "usr_admin",
+      "actorEmail": "admin@capacityconnect.org",
+      "actorRole": "admin",
+      "action": "DELETE_ASSESSMENT",
+      "module": "Assessments",
+      "details": "Deleted assessment: \"Cloud Security & Compliance Midterm\"",
+      "status": "SUCCESS",
+      "id": "aud_1789367318572_6m7j9",
+      "timestamp": "2026-09-14T06:28:38.572Z"
+    },
+    {
+      "actorId": "usr_trainer",
+      "actorEmail": "trainer@capacityconnect.org",
+      "actorRole": "trainer",
+      "action": "UPDATE_ASSESSMENT",
+      "module": "Assessments",
+      "details": "Updated assessment: \"Cloud Security & Compliance Midterm\"",
+      "status": "SUCCESS",
+      "id": "aud_1789367309512_ovfad",
+      "timestamp": "2026-09-14T06:28:29.512Z"
+    },
+    {
+      "actorId": "usr_trainer",
+      "actorEmail": "trainer@capacityconnect.org",
+      "actorRole": "trainer",
+      "action": "GRADE_ASSESSMENT",
+      "module": "Assessments",
+      "details": "Graded submission sub_usr_learner_asm_1789367294621 for Aria Chen: 98/100",
+      "status": "SUCCESS",
+      "id": "aud_1789367306685_r6akg",
+      "timestamp": "2026-09-14T06:28:26.685Z"
+    },
+    {
+      "actorId": "usr_learner",
+      "actorEmail": "learner@capacityconnect.org",
+      "actorRole": "learner",
+      "action": "SUBMIT_ASSESSMENT",
+      "module": "Assessments",
+      "details": "Learner submitted assessment: \"Cloud Security Audit Midterm\" (Auto-score: 100/100)",
+      "status": "SUCCESS",
+      "id": "aud_1789367298673_r4to6",
+      "timestamp": "2026-09-14T06:28:18.673Z"
+    },
+    {
+      "actorId": "usr_trainer",
+      "actorEmail": "trainer@capacityconnect.org",
+      "actorRole": "trainer",
+      "action": "CREATE_ASSESSMENT",
+      "module": "Assessments",
+      "details": "Created assessment: \"Cloud Security Audit Midterm\"",
+      "status": "SUCCESS",
+      "id": "aud_1789367294621_u5kdu",
+      "timestamp": "2026-09-14T06:28:14.621Z"
+    },
+    {
+      "actorId": "usr_superadmin",
+      "actorEmail": "venkatajaswanthsambangi@gmail.com",
+      "actorRole": "super_admin",
+      "action": "UPDATE_SYSTEM_SETTINGS",
+      "module": "System Settings",
+      "details": "Updated settings: superAdminEmail, organizationName, defaultUserRole, allowSelfRegistration, aiModel, auditRetentionDays, enforceRbacStrict, supportContactEmail, maintenanceMode, aiAssistantEnabled",
+      "status": "SUCCESS",
+      "id": "aud_1789366820585_t85ub",
+      "timestamp": "2026-09-14T06:20:20.585Z"
+    },
+    {
+      "actorId": "usr_superadmin",
+      "actorEmail": "venkatajaswanthsambangi@gmail.com",
+      "actorRole": "super_admin",
+      "action": "AI_ASSISTANT_QUERY",
+      "module": "AI Assistant",
+      "details": "Query length: 50 chars. Context: General. User: venkatajaswanthsambangi@gmail.com",
+      "status": "SUCCESS",
+      "id": "aud_1789366061197_b1gbt",
+      "timestamp": "2026-09-14T06:07:41.197Z"
+    },
+    {
+      "actorId": "usr_superadmin",
+      "actorEmail": "venkatajaswanthsambangi@gmail.com",
+      "actorRole": "super_admin",
+      "action": "AI_ASSISTANT_QUERY",
+      "module": "AI Assistant",
+      "details": "Query length: 73 chars. Context: General. User: venkatajaswanthsambangi@gmail.com",
+      "status": "SUCCESS",
+      "id": "aud_1789366036215_gw3ig",
+      "timestamp": "2026-09-14T06:07:16.215Z"
+    },
+    {
+      "actorId": "usr_superadmin",
+      "actorEmail": "venkatajaswanthsambangi@gmail.com",
+      "actorRole": "super_admin",
+      "action": "AI_ASSISTANT_QUERY",
+      "module": "AI Assistant",
+      "details": "Query length: 73 chars. Context: General. User: venkatajaswanthsambangi@gmail.com",
+      "status": "SUCCESS",
+      "id": "aud_1789366014539_9f89k",
+      "timestamp": "2026-09-14T06:06:54.539Z"
+    },
+    {
+      "actorId": "usr_superadmin",
+      "actorEmail": "venkatajaswanthsambangi@gmail.com",
+      "actorRole": "super_admin",
+      "action": "AI_ASSISTANT_QUERY",
+      "module": "AI Assistant",
+      "details": "Query length: 59 chars. Context: General. User: venkatajaswanthsambangi@gmail.com",
+      "status": "SUCCESS",
+      "id": "aud_1789366004627_7fk1e",
+      "timestamp": "2026-09-14T06:06:44.627Z"
+    },
+    {
+      "actorId": "usr_superadmin",
+      "actorEmail": "venkatajaswanthsambangi@gmail.com",
+      "actorRole": "super_admin",
+      "action": "AI_ASSISTANT_QUERY",
+      "module": "AI Assistant",
+      "details": "Query length: 20 chars. Context: General. User: venkatajaswanthsambangi@gmail.com",
+      "status": "SUCCESS",
+      "id": "aud_1789365954568_230y6",
+      "timestamp": "2026-09-14T06:05:54.568Z"
+    },
+    {
+      "actorId": "usr_superadmin",
+      "actorEmail": "venkatajaswanthsambangi@gmail.com",
+      "actorRole": "super_admin",
+      "action": "USER_LOGIN",
+      "module": "Authentication",
+      "details": "User venkatajaswanthsambangi@gmail.com signed in with role super_admin",
+      "status": "SUCCESS",
+      "id": "aud_1789365936056_nxwsl",
+      "timestamp": "2026-09-14T06:05:36.056Z"
+    },
+    {
+      "id": "aud_boot",
+      "timestamp": "2026-09-14T05:04:37.015Z",
+      "actorId": "usr_superadmin",
+      "actorEmail": "venkatajaswanthsambangi@gmail.com",
+      "actorRole": "super_admin",
+      "action": "SYSTEM_BOOTSTRAP",
+      "module": "System Settings",
+      "details": "Capacity Connect database initialized with configured Super Admin email and strict RBAC enforcement.",
+      "ipAddress": "127.0.0.1",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "aud_role_grant",
+      "timestamp": "2026-09-14T05:14:37.015Z",
+      "actorId": "usr_superadmin",
+      "actorEmail": "venkatajaswanthsambangi@gmail.com",
+      "actorRole": "super_admin",
+      "action": "RBAC_VALIDATION",
+      "module": "RBAC Access Control",
+      "details": "Verified role permissions hierarchy: Super Admin (12), Admin (9), Trainer (8), Learner (6).",
+      "ipAddress": "127.0.0.1",
+      "status": "SUCCESS"
+    }
+  ],
+  "system_settings": {
+    "superAdminEmail": "venkatajaswanthsambangi@gmail.com",
+    "organizationName": "CAPACITY CONNECT Enterprise",
+    "defaultUserRole": "learner",
+    "allowSelfRegistration": true,
+    "aiModel": "gemini-3.5-flash",
+    "auditRetentionDays": 90,
+    "enforceRbacStrict": true,
+    "supportContactEmail": "support@capacityconnect.org",
+    "maintenanceMode": false,
+    "aiAssistantEnabled": true
+  },
+  "ai_sessions": {
+    "usr_superadmin": [
+      {
+        "id": "msg_1789365954354_user",
+        "role": "user",
+        "content": "What is 2PC vs Raft?",
+        "timestamp": "2026-09-14T06:05:54.354Z"
+      },
+      {
+        "id": "msg_1789365954568_assistant",
+        "role": "assistant",
+        "content": "I encountered an issue contacting the Gemini model: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [404 Not Found] This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.. Please verify your API key in the AI Studio secrets panel. In the meantime, I remain ready to assist with offline study materials and syllabus reviews.",
+        "timestamp": "2026-09-14T06:05:54.568Z"
+      },
+      {
+        "id": "msg_1789366004441_user",
+        "role": "user",
+        "content": "What is the primary advantage of Raft consensus over Paxos?",
+        "timestamp": "2026-09-14T06:06:44.441Z"
+      },
+      {
+        "id": "msg_1789366004627_assistant",
+        "role": "assistant",
+        "content": "I encountered an issue contacting the Gemini model: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [404 Not Found] This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.. Please verify your API key in the AI Studio secrets panel. In the meantime, I remain ready to assist with offline study materials and syllabus reviews.",
+        "timestamp": "2026-09-14T06:06:44.627Z"
+      },
+      {
+        "id": "msg_1789366014301_user",
+        "role": "user",
+        "content": "Explain the main advantage of Raft over Paxos in two clear bullet points.",
+        "timestamp": "2026-09-14T06:06:54.301Z"
+      },
+      {
+        "id": "msg_1789366014539_assistant",
+        "role": "assistant",
+        "content": "I encountered an issue contacting the Gemini model: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [404 Not Found] This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.. Please verify your API key in the AI Studio secrets panel. In the meantime, I remain ready to assist with offline study materials and syllabus reviews.",
+        "timestamp": "2026-09-14T06:06:54.539Z"
+      },
+      {
+        "id": "msg_1789366033433_user",
+        "role": "user",
+        "content": "Explain the main advantage of Raft over Paxos in two clear bullet points.",
+        "timestamp": "2026-09-14T06:07:13.433Z"
+      },
+      {
+        "id": "msg_1789366036214_assistant",
+        "role": "assistant",
+        "content": "I encountered an issue contacting the Gemini model: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.. Please verify your API key in the AI Studio secrets panel. In the meantime, I remain ready to assist with offline study materials and syllabus reviews.",
+        "timestamp": "2026-09-14T06:07:16.214Z"
+      },
+      {
+        "id": "msg_1789366054569_user",
+        "role": "user",
+        "content": "List 3 core principles of Zero Trust Architecture.",
+        "timestamp": "2026-09-14T06:07:34.569Z"
+      },
+      {
+        "id": "msg_1789366061197_assistant",
+        "role": "assistant",
+        "content": "In cybersecurity and enterprise architecture, **Zero Trust Architecture (ZTA)** operates on the foundational motto: *\"Never Trust, Always Verify.\"* \n\nAccording to industry standards (such as NIST SP 800-207 and Microsoft's Zero Trust framework), the **three core principles** are:\n\n---\n\n### 1. Verify Explicitly\n* **Concept:** Never assume trust based solely on network location (e.g., being inside a corporate firewall or VPN).\n* **Implementation:** Always authenticate and authorize based on **all available data points**, including:\n  * User identity and credentials\n  * Device health, integrity, and compliance\n  * Real-time location and context\n  * Service or workload context\n  * Data classification and anomaly detection\n\n---\n\n### 2. Use Least Privilege Access\n* **Concept:** Limit access to only what is strictly necessary to perform a specific task, reducing exposure and lateral movement.\n* **Implementation:**\n  * **Just-In-Time (JIT)** and **Just-Enough-Access (JEA)** controls.\n  * Role-Based Access Control (**RBAC**) and Attribute-Based Access Control (**ABAC**).\n  * Adaptive, risk-based session controls to automatically step up authentication or revoke sessions when risk thresholds increase.\n\n---\n\n### 3. Assume Breach\n* **Concept:** Operate under the assumption that adversaries already exist inside your network perimeter and that components may already be compromised.\n* **Implementation:**\n  * **Micro-segmentation:** Divide networks, workloads, and environments to prevent lateral movement.\n  * **End-to-End Encryption:** Encrypt data both in transit and at rest.\n  * **Continuous Telemetry & Analytics:** Leverage automated threat detection (e.g., SIEM/SOAR, EDR/XDR) to gain visibility and respond to security events in real time.",
+        "timestamp": "2026-09-14T06:07:41.197Z"
+      },
+      {
+        "id": "msg_1789367709759_user",
+        "role": "user",
+        "content": "What is the Raft consensus protocol?",
+        "timestamp": "2026-09-14T06:35:09.759Z"
+      },
+      {
+        "id": "msg_1789367717992_assistant",
+        "role": "assistant",
+        "content": "I encountered an issue contacting the Gemini model: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent: [404 Not Found] This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API.. Please verify your API key in the AI Studio secrets panel. In the meantime, I remain ready to assist with offline study materials and syllabus reviews.",
+        "timestamp": "2026-09-14T06:35:17.992Z"
+      },
+      {
+        "id": "msg_1789367769471_user",
+        "role": "user",
+        "content": "What is the primary role of circuit breakers in cloud architectures?",
+        "timestamp": "2026-09-14T06:36:09.471Z"
+      },
+      {
+        "id": "msg_1789367775051_assistant",
+        "role": "assistant",
+        "content": "I encountered an issue contacting the Gemini model: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent: [404 Not Found] This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API.. Please verify your API key in the AI Studio secrets panel. In the meantime, I remain ready to assist with offline study materials and syllabus reviews.",
+        "timestamp": "2026-09-14T06:36:15.051Z"
+      },
+      {
+        "id": "msg_1789367790329_user",
+        "role": "user",
+        "content": "What is Raft consensus?",
+        "timestamp": "2026-09-14T06:36:30.329Z"
+      },
+      {
+        "id": "msg_1789367790730_assistant",
+        "role": "assistant",
+        "content": "I encountered an issue contacting the Gemini model: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [404 Not Found] models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.. Please verify your API key in the AI Studio secrets panel. In the meantime, I remain ready to assist with offline study materials and syllabus reviews.",
+        "timestamp": "2026-09-14T06:36:30.730Z"
+      },
+      {
+        "id": "msg_1789367814438_user",
+        "role": "user",
+        "content": "What is Raft consensus?",
+        "timestamp": "2026-09-14T06:36:54.438Z"
+      },
+      {
+        "id": "msg_1789367814829_assistant",
+        "role": "assistant",
+        "content": "**Raft vs. Two-Phase Commit (2PC):**\n\n1. **Raft Consensus Protocol:**\n   - Designed for leader-based distributed state machine replication.\n   - Leader election uses randomized timers to prevent split votes.\n   - Requires a strict quorum majority ($(N/2) + 1$) for commit decisions, tolerating up to $\\lfloor(N-1)/2\\rfloor$ node crashes without stalling.\n   - Used extensively in systems like etcd, Kubernetes, and HashiCorp Consul.\n\n2. **Two-Phase Commit (2PC):**\n   - An atomic commitment protocol across heterogeneous databases.\n   - Operates in *Prepare* and *Commit* phases coordinated by a transaction coordinator.\n   - **Limitation:** It is a blocking protocol. If the coordinator crashes after the prepare phase, participating cohorts are left in doubt and cannot make forward progress.\n\n*Key Takeaway:* Raft provides high availability and partition tolerance (CP in CAP theorem), whereas 2PC provides atomic transactions across distinct resources at the cost of availability during coordinator failures.\n\n*(Note: Knowledge generated via Capacity Connect Adaptive Learning Engine)*",
+        "timestamp": "2026-09-14T06:36:54.829Z"
+      }
+    ],
+    "usr_learner": [
+      {
+        "id": "msg_1789368701447_user",
+        "role": "user",
+        "content": "What is institutional capacity?",
+        "timestamp": "2026-09-14T06:51:41.447Z"
+      },
+      {
+        "id": "msg_1789368701912_assistant",
+        "role": "assistant",
+        "content": "Here are the foundational principles regarding your query:\n\n- **Enterprise Cloud Architecture:** Emphasizes high availability, automated horizontal scaling, declarative infrastructure-as-code, and automated self-healing.\n- **Security by Design:** Enforces strict role-based access control (RBAC), data encryption in transit and at rest, and automated vulnerability scanning.\n- **Operational Excellence:** Continuous monitoring via telemetry, health endpoints, distributed tracing, and automated alerting.\n\nLet me know which specific module or technical component you would like to explore in greater detail!\n\n*(Note: Knowledge generated via Capacity Connect Adaptive Learning Engine)*",
+        "timestamp": "2026-09-14T06:51:41.912Z"
+      }
+    ]
+  }
+}

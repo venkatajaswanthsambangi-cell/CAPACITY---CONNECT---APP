@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: capacity-connect
+    env: node
+    plan: free
+    region: oregon
+    buildCommand: npm install --include=dev && npm run build
+    startCommand: node server/index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: SUPER_ADMIN_EMAIL
+        value: venkatajaswanthsambangi@gmail.com
